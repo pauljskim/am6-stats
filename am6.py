@@ -32,6 +32,7 @@ SEASONS_DIR = os.path.join(ROOT, 'seasons')
 OUT_DIR = os.path.join(ROOT, 'public')
 TEMPLATE = os.path.join(ROOT, 'site', 'template.html')
 
+KST = datetime.timezone(datetime.timedelta(hours=9))   # GitHub Actions 서버는 UTC
 FIELD_TYPES = ['8:8', '9:9', '11:11']
 FUTSAL = '풋살'
 
@@ -443,7 +444,7 @@ def season_payload(season, config, rows):
         'players': players,
         'venues': venues.most_common(),
         'synergy': synergy(rows, regular),
-        'built_at': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'),
+        'built_at': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'),
     }
 
 
