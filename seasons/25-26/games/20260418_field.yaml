@@ -1,0 +1,76 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 17"
+date: "2026-04-18"
+match_type: "11:11"         # 8:8, 9:9, 11:11
+venue: "와동인조잔디구장"
+win_team: "None"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    노준:
+      GK: [한지훈]
+      DF: [이창호, 이재일, 민동일, 김재명]
+      MF: [오권용, 오권호, 박승민]
+      FW: [전진우, 박찬웅, 정성균]
+    goals: {}
+    assists: {}
+    referees: {}
+      
+  2:
+    노준:
+      GK: [한지훈]
+      DF: [이창호, 이재일, 오권용, 김진섭]
+      MF: [박승민, 김상범, 고경문]
+      FW: [김재명, 정성균, 김노준]
+    goals:
+      김상범: 1    
+    assists:
+      오권호: 1    
+    referees:
+      - name: 오권호
+        team: 노준
+        role: main
+      - name: 민동일
+        team: 노준
+        role: assistant
+      - name: 박찬웅
+        team: 노준
+        role: assistant
+
+  3:
+    노준:
+      GK: [한지훈]
+      DF: [이창호, 전진우, 민동일, 정성균]
+      MF: [오권호, 김상범, 고경문]
+      FW: [김재명, 박찬웅, 김진섭]
+    goals:
+      김재명: 1    
+    assists:
+      오권호: 1
+    assists: {}
+    referees: {}
+
+  4:
+    노준:
+      GK: [한지훈]
+      DF: [전진우, 민동일, 이재일, 김진섭]
+      MF: [오권호, 오권용, 박승민]
+      FW: [김노준, 박찬웅, 김상범]
+    goals: {}
+    assists: {}
+    referees:
+      - name: 김재명
+        team: 노준
+        role: main
+      - name: 이창호
+        team: 노준
+        role: assistant
+      - name: 정성균
+        team: 노준
+        role: assistant    

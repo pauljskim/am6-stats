@@ -1,0 +1,102 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 15"
+date: "2026-03-28"
+match_type: "9:9"         # 8:8, 9:9, 11:11
+venue: "장화운동장"
+win_team: "노준"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    노준:
+      GK: [이창호]
+      DF: [전수리, 오권용, 이재일]
+      MF: [김재명, 윤성윤]
+      FW: [정성균, 김정민, 박서룡]
+    오릭:
+      GK: [김지환]
+      DF: [한지훈, 민동일, 전진우]
+      MF: [고경문, 오권호]
+      FW: [윤재민, 이원규, 이상윤]
+    goals: {}
+    assists: {}
+    referees:
+      - name: 김상범
+        team: 오릭
+        role: main        # main 또는 assistant
+
+  2:
+    노준:
+      GK: [전수리]
+      DF: [이창호, 박서룡, 김정민]
+      MF: [김노준, 이재일]
+      FW: [김재명, 박찬웅, 정성균]
+    오릭:
+      GK: [오권호]
+      DF: [한지훈, 전진우, 김지환]
+      MF: [고경문, 김상범]
+      FW: [윤재민, 이원규, 이상윤]
+    goals:
+      김상범: 1
+    assists:
+      전진우: 1
+    referees:
+      - name: 오권용
+        team: 노준
+        role: main
+      - name: 민동일
+        team: 오릭
+        role: assistant
+  3:
+    노준:
+      GK: [김재명]
+      DF: [이창호, 오권용, 정성균]
+      MF: [윤성윤, 박승민]
+      FW: [이재일, 전수리, 박찬웅]
+    오릭:
+      GK: [한지훈]
+      DF: [이원규, 민동일, 김지환]
+      MF: [김상범, 오권호]
+      FW: [윤재민, 전진우, 고경문]
+    goals:
+      고경문: 1
+      김상범: 1
+    assists: {}
+    referees:
+      - name: 이상윤
+        team: 오릭
+        role: assistant
+      - name: 박서룡
+        team: 노준
+        role: assistant
+
+  4:
+    노준:
+      GK: [이재일]
+      DF: [이창호, 오권용, 전수리]
+      MF: [윤성윤, 박승민]
+      FW: [김재명, 김정민, 박서룡]
+    오릭:
+      GK: [윤재민]
+      DF: [이원규, 김상범, 이상윤]
+      MF: [고경문, 오권호]
+      FW: [전진우, 민동일, 한지훈]
+    goals:
+      박서룡: 1
+      윤성윤: 1
+      박승민: 1
+    assists:
+      김재명: 2
+      박서룡: 1
+    referees:
+      - name: 정성균
+        team: 노준
+        role: assistant
+      - name: 박찬웅
+        team: 노준
+        role: assistant

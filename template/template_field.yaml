@@ -1,0 +1,59 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round XX"
+date: "2026-XX-XX"
+match_type: "9:9"         # 8:8, 9:9, 11:11
+venue: "장화운동장"
+win_team: "노준"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    노준:
+      GK: [이동기]
+      DF: [한태빈, 민동일, 한별]
+      MF: [박승민, 이재일]
+      FW: [김재명, 박찬웅, 김노준]
+    진우:
+      GK: [김진섭]
+      DF: [박민혁, 전진우, 윤현]
+      MF: [윤성윤, 최세웅]
+      FW: [이용준, 이원규, 정성균]
+    goals:
+      김재명: 2
+      박승민: 1
+    assists:
+      박찬웅: 1
+      이재일: 2
+    referees:
+      - name: 이정훈
+        team: 노준
+        role: main        # main 또는 assistant
+
+  2:
+    노준:
+      GK: [이동기]
+      DF: [한태빈, 민동일, 한별]
+      MF: [박승민, 이재일]
+      FW: [김재명, 박찬웅, 김노준]
+    진우:
+      GK: [김진섭]
+      DF: [박민혁, 전진우, 윤현]
+      MF: [윤성윤, 최세웅]
+      FW: [이용준, 이원규, 정성균]
+    goals: {}
+    assists: {}
+    referees:
+      - name: 전진우
+        team: 진우
+        role: main
+
+  3:
+    # ... (동일 형식)
+
+  4:
+    # ... (동일 형식)

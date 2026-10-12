@@ -1,0 +1,113 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 19"
+date: "2026-05-09"
+match_type: "11:11"         # 8:8, 9:9, 11:11
+venue: "성호구장"
+win_team: "진우"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    노준:
+      GK: [강영석]
+      DF: [상현, 한태빈, 전수리, 성민]
+      MF: [윤건, 김재명, 김지환]
+      FW: [박서룡, 박민혁, 김상범]
+    진우:
+      GK: [오권호]
+      DF: [전진우, 이재일, 최세웅]
+      MF: [김진섭, 박승민, 윤성윤, 윤현]
+      FW: [윤재민, 이원규, 정성균]
+    goals:
+      박서룡: 1
+      김상범: 1
+      이원규: 1
+    assists:
+      박서룡: 1
+      윤현: 2
+    referees:
+      - name: 민동일
+        team: 노준
+        role: assistant        # main 또는 assistant
+      - name: 백두산
+        team: 노준
+        role: assistant        # main 또는 assistant
+
+  2:
+    노준:
+      GK: [한태빈]
+      DF: [박서룡, 백두산, 민동일, 강영석]
+      MF: [윤건, 김지환, 김재명]
+      FW: [박민혁, 김상범, 김노준]
+    진우:
+      GK: [박승민]
+      DF: [윤재민, 이재일, 전진우, 정성균]
+      MF: [윤성윤, 오권호, 윤현, 이원규, 최세웅]
+      FW: [박찬웅]
+    goals:
+      김재명: 1
+    assists:
+      김상범: 1
+    referees:
+      - name: 김진섭
+        team: 진우
+        role: main
+
+  3:
+    노준:
+      GK: [김상범]
+      DF: [성민, 백두산, 민동일, 한태빈]
+      MF: [윤건, 김지환, 김재명]
+      FW: [상현, 강영석, 전수리]
+    진우:
+      GK: [최세웅]
+      DF: [정성균, 이원규, 전진우, 윤현]
+      MF: [이재일, 오권호, 윤재민, 박승민, 김진섭]
+      FW: [박찬웅]
+    goals:
+      이재일: 1
+      박찬웅: 1
+    assists:
+      윤재민: 1
+      오권호: 1
+    referees:
+      - name: 박서룡
+        team: 노준
+        role: main
+
+  4:
+    노준:
+      GK: [백두산]
+      DF: [상현, 강영석, 정태빈, 성민]
+      MF: [한태빈, 김상범, 김노준]
+      FW: [박서룡, 박민혁, 전수리]
+    진우:
+      GK: [윤현]
+      DF: [정성균, 오권호, 전진우, 최세웅]
+      MF: [이재일, 윤성윤, 박승민, 이원규, 김진섭]
+      FW: [박찬웅]
+    goals:
+      김진섭: 2
+      김노준: 1
+    assists:
+      윤재민: 1
+      이재일: 1
+      김상범: 1
+    referees:
+      - name: 김재명
+        team: 노준
+        role: main
+      - name: 윤재민
+        team: 진우
+        role: assistant
+      - name: 민동일
+        team: 노준
+        role: assistant
+      - name: 윤건
+        team: 노준
+        role: assistant                

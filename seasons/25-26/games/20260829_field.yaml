@@ -1,0 +1,116 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 29"
+date: "2026-08-29"
+match_type: "9:9"         # 8:8, 9:9, 11:11
+venue: "송린중학교"
+win_team: "진우"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    상범:
+      GK: [재성]
+      DF: [한지훈, 김노준, 박민혁]
+      MF: [정성균, 한태빈, 김상범, 박서룡]
+      FW: [민동일]
+    진우:
+      GK: [박승민]
+      DF: [안상현, 전진우, 최세웅]
+      MF: [윤재민, 오권호, 이재일, 김재명]
+      FW: [이원규]
+    goals:
+      안상현: 2
+      이원규: 1
+      윤재민: 1
+      전진우: 1
+      이재일: 1
+    assists:
+      이원규: 1
+      이재일: 2
+      김재명: 2
+      윤재민: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      
+  2:
+    상범:
+      GK: [재성]
+      DF: [한지훈, 민동일, 박민혁]
+      MF: [정성균, 한태빈, 김진섭]
+      FW: [박찬웅, 박서룡]
+    진우:
+      GK: [최세웅]
+      DF: [안상현, 전진우, 지원]
+      MF: [김재명, 박승민, 이재일, 전수리]
+      FW: [이원규]
+    goals:
+      김재명: 1
+      정성균: 1
+      박서룡: 1
+    assists:
+      박승민: 1
+      김진섭: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 오권호
+        team: 진우
+        role: assistant      
+
+  3:
+    상범:
+      GK: [재성]
+      DF: [김상범, 김노준, 박민혁]
+      MF: [정성균, 한태빈, 김진섭]
+      FW: [박찬웅, 박서룡]
+    진우:
+      GK: [이재일]
+      DF: [윤재민, 이원규, 지원]
+      MF: [김재명, 오권호, 박승민, 최세웅]
+      FW: [전수리]
+    goals:
+      이원규: 2
+      박찬웅: 1
+    assists:
+      오권호: 1
+      김재명: 1
+      박서룡: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 안상현
+        team: 진우
+        role: assistant         
+
+  4:
+    상범:
+      GK: [재성]
+      DF: [한지훈, 민동일, 김진섭]
+      MF: [정성균, 김상범, 박민혁]
+      FW: [박찬웅, 김노준]
+    진우:
+      GK: [이원규]
+      DF: [안상현, 박승민, 전수리]
+      MF: [윤재민, 오권호, 이재일, 전진우]
+      FW: [최세웅]
+    goals:
+      안상현: 1
+      김상범: 1
+    assists:
+      정성균: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 박서룡
+        team: 상범
+        role: assistant           

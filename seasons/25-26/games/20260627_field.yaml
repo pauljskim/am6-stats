@@ -1,0 +1,82 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 25"
+date: "2026-06-27"
+match_type: "9:9"         # 8:8, 9:9, 11:11
+venue: "수암꿈나무구장"
+win_team: "상범"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    상범:
+      GK: []
+      DF: [안상현, 김상범, 전진우]
+      MF: [오권호, 이동기, 이재일]
+      FW: [이원규, 박서룡]
+    노준:
+      GK: [김지환]
+      DF: [이상윤, 박찬웅, 한별]
+      MF: [박승민, 한태빈]
+      FW: [윤재민, 최세웅, 김재명]
+    goals:
+      최세웅: 1
+    assists: {}
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 이상윤
+        team: 노준
+        role: assistant
+      - name: 김노준
+        team: 노준
+        role: assistant
+      
+  2:
+    상범:
+      GK: [오권호]
+      DF: [안상현, 김상범, 전진우]
+      MF: [백두산, 이동기, 이재일]
+      FW: [이원규, 박서룡]
+    노준:
+      GK: [박찬웅]
+      DF: [한별, 한태빈, 최세웅]
+      MF: [김지환, 박승민]
+      FW: [김노준, 김재명, 윤재민]
+    goals:
+      이재일: 2
+      박서룡: 1
+    assists:
+      이원규: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+
+  3:
+    상범:
+      GK: [윤재민]
+      DF: [한별, 한태빈, 이상윤]
+      MF: [김지환, 박승민]
+      FW: [김재명, 박찬웅, 최세웅]
+    goals:
+      전진우: 2
+      최세웅: 2
+      박승민: 1
+      안상현: 3
+    assists:
+      오권호: 1
+      김재명: 2
+      이재일: 1
+      백두산: 1
+      박승민: 1
+      박서룡: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main

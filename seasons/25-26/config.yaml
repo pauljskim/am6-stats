@@ -1,0 +1,63 @@
+# AM6 시즌 설정 — 회원 명단과 파워랭킹 가중치
+# (구글 시트 Summary_sheet의 회원 목록 / 가중치 테이블을 옮긴 것)
+
+season: "25-26"
+period: "2025.12 – 2026.11"
+team_name: "AM6"
+
+# 종합포인트 가중치 (Summary_sheet '가중치 테이블 (25-26 1Q)')
+weights:
+  attendance: 10          # 출석 1회당
+  풋살:  {win: 2,  goal: 2}
+  "8:8":   {win: 5,  goal: 4,  assist: 2, clean_sheet: 2}
+  "9:9":   {win: 5,  goal: 5,  assist: 3, clean_sheet: 3}
+  "11:11": {win: 10, goal: 10, assist: 5, clean_sheet: 3}
+  referee: 2              # 주심 (쿼터당)
+  assistant_referee: 1    # 부심 (쿼터당)
+
+# 수동 보정: 원본 기록과 다르게 집계해야 할 때 (값만큼 더하거나 뺌)
+adjustments:
+  - name: 김상범
+    "8:8": {clean_sheet: -1}   # 구글 시트 Summary_sheet J2에 0으로 직접 입력돼 있던 값 재현
+
+# 파워랭킹 대상. 여기 없는 이름은 '게스트'로 표시되고 파워랭킹에서 빠진다.
+# status: 정회원 / 장기부상 / 휴면 등 자유롭게
+members:
+  - {name: 김상범, number: "0", status: 정회원}
+  - {name: 원지훈, number: "2", status: 정회원}
+  - {name: 고경문, number: "3", status: 정회원}
+  - {name: 김노준, number: "4", status: 정회원}
+  - {name: 박승민, number: "5", status: 정회원}
+  - {name: 민동일, number: "7", status: 정회원}
+  - {name: 이재일, number: "8", status: 정회원}
+  - {name: 전진우, number: "9", status: 정회원}
+  - {name: 박찬웅, number: "10", status: 정회원}
+  - {name: 윤재민, number: "11", status: 정회원}
+  - {name: 윤석호, number: "12", status: 정회원}
+  - {name: 오권호, number: "13", status: 정회원}
+  - {name: 이정훈, number: "14", status: 정회원}
+  - {name: 이원규, number: "15", status: 정회원}
+  - {name: 이웅혁, number: "18", status: 정회원}
+  - {name: 윤성윤, number: "22", status: 정회원}
+  - {name: 최세웅, number: "23", status: 정회원}
+  - {name: 소윤진, number: "25", status: 정회원}
+  - {name: 한태빈, number: "26", status: 정회원}
+  - {name: 박민혁, number: "27", status: 정회원}
+  - {name: 백두산, number: "30", status: 정회원}
+  - {name: 이동기, number: "32", status: 정회원}
+  - {name: 이상윤, number: "33", status: 정회원}
+  - {name: 정성균, number: "34", status: 정회원}
+  - {name: 김진섭, number: "37", status: 정회원}
+  - {name: 김지환, number: "40", status: 정회원}
+  - {name: 전진현, number: "43", status: 정회원}
+  - {name: 박서룡, number: "44", status: 정회원}
+  - {name: 김재명, number: "50", status: 정회원}
+  - {name: 윤건, number: "71", status: 정회원}
+  - {name: 윤현, number: "72", status: 정회원}
+  - {name: 김정민, number: "83", status: 정회원}
+  - {name: 이용준, number: "88", status: 정회원}
+  - {name: 전수리, number: "90", status: 정회원}
+  - {name: 오권용, number: "94", status: 정회원}
+  - {name: 한지훈, number: "99", status: 정회원}
+  - {name: 지현수, number: "미정", status: 장기부상}
+  - {name: 안상현, number: "73", status: 정회원}

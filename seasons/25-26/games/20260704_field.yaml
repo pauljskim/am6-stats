@@ -1,0 +1,113 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 26"
+date: "2026-07-04"
+match_type: "9:9"         # 8:8, 9:9, 11:11
+venue: "수암꿈나무구장"
+win_team: "진우"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    상범:
+      GK: [재성]
+      DF: [한지훈, 오권용, 이웅혁]
+      MF: [박민혁, 윤현, 최세웅]
+      FW: [윤재민, 김정민]
+    진우:
+      GK: [오권호]
+      DF: [김지환, 전진우, 이상윤]
+      MF: [정성균, 이재일, 박승민]
+      FW: [민동일, 박찬웅]
+    goals: {}
+    assists: {}
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 김재명
+        team: 상범
+        role: assistant
+      - name: 이상윤
+        team: 진우
+        role: assistant
+      
+  2:
+    상범:
+      GK: [재성]
+      DF: [한지훈, 김상범, 이웅혁]
+      MF: [김재명, 윤현, 백두산]
+      FW: [윤재민, 김정민]
+    진우:
+      GK: [이재일]
+      DF: [한태빈, 용혁, 이상윤]
+      MF: [김지환, 오권호, 박승민]
+      FW: [전진우, 김진섭]
+    goals:
+      박승민: 1
+    assists:
+      한태빈: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 오권용
+        team: 상범
+        role: assistant        
+
+  3:
+    상범:
+      GK: [재성]
+      DF: [박민혁, 오권용, 이웅혁]
+      MF: [김재명, 김상범, 최세웅]
+      FW: [김정민, 윤현]
+    진우:
+      GK: [김지환]
+      DF: [김진섭, 민동일, 용혁]
+      MF: [정성균, 오권호, 한태빈]
+      FW: [박찬웅, 이재일]
+    goals:
+      오권호: 1
+      윤현: 1
+      김상범: 1
+    assists:
+      박찬웅: 1
+      최세웅: 1
+      김재명: 1
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 박승민
+        team: 상범
+        role: assistant
+  4:
+    상범:
+      GK: [재성]
+      DF: [한지훈, 윤현, 이웅혁]
+      MF: [오권용, 김상범]
+      FW: [윤재민, 최세웅]
+    진우:
+      GK: [한태빈]
+      DF: [박찬웅, 오권호, 용혁]
+      MF: [정성균, 이재일, 박승민]
+      FW: [전진우, 민동일]
+    goals:
+      전진우: 1
+      민동일: 1
+    assists:
+      이재일: 2
+    referees:
+      - name: 소윤진
+        team: null
+        role: main
+      - name: 이웅혁
+        team: 상범
+        role: assistant
+      - name: 김진섭
+        team: 진우
+        role: assistant                

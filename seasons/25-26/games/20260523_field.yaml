@@ -1,0 +1,75 @@
+# === 필드 경기 템플릿 ===
+type: field
+game_id: "25-26 Round 21"
+date: "2026-05-23"
+match_type: "11:11"         # 8:8, 9:9, 11:11
+venue: "성호구장"
+win_team: "None"           # 승리 팀 (무승부면 null)
+
+# [선택] 전체 경기 주심 (쿼터별 주심이면 생략하고 각 쿼터 referees에 작성)
+# main_referee:
+#   name: 윤재민
+#   team: 노준
+
+quarters:
+  1:
+    노준:
+      GK: [오권호]
+      DF: [윤재민, 오권용, 전진우, 최세웅]
+      MF: [이동기, 정성균, 김재명, 김상범, 박승민]
+      FW: [이재일]
+    goals:
+      김재명: 1    
+    assists:
+      이재일: 1  
+    referees:
+      - name: 김노준
+        team: 진우
+        role: main
+      - name: 김진섭
+        team: 진우
+        role: assistant
+      - name: 이원규
+        team: 진우
+        role: assistant        
+
+      
+  2:
+    노준:
+      GK: [김상범]
+      DF: [정성균, 오권용, 전진우, 김진섭]
+      MF: [이동기, 김노준, 김재명, 이재일, 박찬웅]
+      FW: [이원규]
+    goals: {}
+    assists: {}
+    referees:
+      - name: 최세웅
+        team: 진우
+        role: assistant
+
+  3:
+    노준:
+      GK: [이동기]
+      DF: [오권용, 이원규, 김노준, 김상범]
+      MF: [오권호, 윤재민, 최세웅, 박승민, 김진섭]
+      FW: [박찬웅]
+    goals: {}
+    assists: {}
+    assists: {}
+    referees: {}
+
+  4:
+    노준:
+      GK: [이원규]
+      DF: [윤재민, 김노준, 이재일, 정성균]
+      MF: [이동기, 전진우, 오권용, 오권호, 박승민]
+      FW: [최세웅]
+    goals: {}
+    assists: {}
+    referees:
+      - name: 전진우
+        team: 진우
+        role: main
+      - name: 김상범
+        team: 진우
+        role: assistant  
