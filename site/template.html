@@ -50,6 +50,8 @@
     --s1: #1c2e23; --s2: #255038; --s3: #347a53; --s4: #4fb07f; --s5: #92dcb4; --s-ink: #e3ebe5; --s-ink-hi: #08130d;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }   /* section.view의 display:flex가 hidden을 덮어쓰지 않게 */
+img { max-width: 100%; }
 html, body { margin: 0; }
 body {
   background: var(--bg); color: var(--ink);
