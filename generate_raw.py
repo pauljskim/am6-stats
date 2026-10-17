@@ -24,8 +24,15 @@ def generate_field(data):
     for qi, q_num in enumerate(sorted_quarters):
         q_data = data['quarters'][q_num]
 
-        reserved_keys = {'goals', 'assists', 'referees'}
+        reserved_keys = {'goals', 'assists', 'referees', 'opponent_goals'}
         team_names = [k for k in q_data if k not in reserved_keys]
+
+        # 외부 팀과의 경기: 상대 득점은 opponent_goals 로 받는다 (클린시트 계산용)
+        external_goals = 0
+        if data.get('opponent'):
+            if q_data.get('opponent_goals') is None:
+                print(f"경고: {q_num}쿼터 opponent_goals가 비어 있어 상대 득점을 0으로 봅니다", file=sys.stderr)
+            external_goals = q_data.get('opponent_goals') or 0
 
         # Build player -> team mapping and ordered roster
         player_team = {}
@@ -64,7 +71,7 @@ def generate_field(data):
 
         # Generate player rows
         for team_name in sorted_teams:
-            opponent_goals = sum(
+            opponent_goals = external_goals + sum(
                 team_goals_scored[t] for t in team_names if t != team_name
             )
 

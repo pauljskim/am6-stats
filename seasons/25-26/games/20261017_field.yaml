@@ -1,0 +1,66 @@
+# === 필드 경기 (외부 팀과 경기) ===
+type: field
+game_id: "25-26 Round 33"
+date: "2026-10-17"
+match_type: "11:11"         # 8:8, 9:9, 11:11
+venue: "풍경운동장"
+opponent: "브이에스"        # 상대 팀 이름 (띄어쓰기 없이)
+win_team: null             # 이기면 우리 팀(감독 이름), 지면 상대팀 이름, 무승부면 null
+
+quarters:
+  1:
+    상범:                    # 우리 팀은 한 팀으로만 적는다
+      GK: [재성]
+      DF: [김재명, 전진우, 박찬웅, 김상범]
+      MF: [이동기, 오권호, 김노준, 김정민, 박서룡]
+      FW: [이재일]
+    opponent_goals: 0       # 이 쿼터 상대 득점 (0이면 이 쿼터에 뛴 우리 선수 전원 클린시트)
+    goals: {}               # 우리 선수 득점  예) 박서룡: 1
+    assists: {}
+    referees:                # 우리 회원이 심판을 봤으면 적는다  예) - {name: 윤재민, team: AM6, role: main}
+      - name: 소윤진
+        team: 상범
+        role: main
+
+  2:
+    상범:
+      GK: [재성]
+      DF: [김재명, 전진우, 민동일, 소윤진]
+      MF: [이동기, 김상범, 윤성윤, 김진섭, 최세웅]
+      FW: [이재일]
+    opponent_goals: 1
+    goals:
+      소윤진: 1
+    assists: {}
+    referees: []
+
+  3:
+    상범:
+      GK: [재성]
+      DF: [전진우, 민동일, 김노준, 김진섭]
+      MF: [최세웅, 오권호, 윤성윤, 김정민, 박서룡]
+      FW: [박찬웅]
+    opponent_goals: 0
+    goals: {}
+    assists: {}
+    referees:
+      - name: 소윤진
+        team: 상범
+        role: main
+      - name: 이동기
+        team: 상범
+        role: assistant
+
+  4:
+    상범:
+      GK: [재성]
+      DF: [김정민, 전진우, 민동일, 윤성윤]
+      MF: [오권호, 이재일, 김노준, 소윤진, 박서룡]
+      FW: [박찬웅]
+    opponent_goals: 0
+    goals: {}
+    assists: {}
+    referees:
+      - name: 최세웅
+        team: 상범
+        role: assistant

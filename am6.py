@@ -83,8 +83,12 @@ def yaml_rows(data):
         raise ValueError('알 수 없는 type: %s' % data['type'])
     rows = [make_row(*r) for r in raw]
     if data.get('opponent'):
+        opp = {'win': _norm(data['win_team']) == _norm(data['opponent']),
+               'quarters': {_int(q): _int((v or {}).get('opponent_goals'))
+                            for q, v in (data.get('quarters') or {}).items()}}
         for r in rows:
             r['etc'] = r['etc'] or '(vs %s)' % data['opponent']
+            r['opp'] = opp
     return rows
 
 
@@ -288,8 +292,11 @@ def game_summaries(rows):
                 })
             m = re.search(r'vs\s*([^)\s]+)', g['note'])
             if len(team_info) == 1 and m:
-                team_info.append({'name': m.group(1), 'goals': None, 'win': False,
-                                  'quarters': [None] * len(qs), 'players': [], 'external': True})
+                opp = next((r['opp'] for r in rs if 'opp' in r), None)   # history.tsv 경기는 상대 득점 없음
+                oq = [opp['quarters'].get(q, 0) for q in qs] if opp else [None] * len(qs)
+                team_info.append({'name': m.group(1), 'goals': sum(oq) if opp else None,
+                                  'win': bool(opp and opp['win']),
+                                  'quarters': oq, 'players': [], 'external': True})
             g['teams'] = team_info
             g['quarters'] = qs
             refs = []

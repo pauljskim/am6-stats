@@ -462,7 +462,7 @@ const NAV = /*__NAV__*/null;
         <div class="score"><span class="${cls(a, b)}">${sc(a)}</span><span class="colon">:</span><span class="${cls(b, a)}">${sc(b)}</span></div>
         <div class="side r"><span class="tn${b.win ? ' win' : ''}">${esc(b.name)}${b.external ? '' : ' 팀'}</span><span class="sc">${b.players.length ? b.players.length + '명' : '상대팀'}</span></div>
       </div>
-      ${g.quarters.length > 1 && !b.external ? `<div class="qline">${g.quarters.map((q, i) => `<span>${q}Q <b>${a.quarters[i]}–${b.quarters[i]}</b></span>`).join('')}</div>` : ''}`;
+      ${g.quarters.length > 1 && !b.quarters.includes(null) ? `<div class="qline">${g.quarters.map((q, i) => `<span>${q}Q <b>${a.quarters[i]}–${b.quarters[i]}</b></span>`).join('')}</div>` : ''}`;
   }
   const nameCounts = arr => arr.length
     ? `<div class="name-list">${arr.map(([n, c]) => `<span>${pbtn(n)}${c > 1 ? `<span class="cnt num">${c}</span>` : ''}</span>`).join('')}</div>`
@@ -593,7 +593,7 @@ const NAV = /*__NAV__*/null;
   }
   function gameDetail(g) {
     let h = '';
-    if (!isFutsal(g.type) && g.teams && g.teams.length > 1 && g.quarters.length > 1 && !g.teams[1].external) {
+    if (!isFutsal(g.type) && g.teams && g.teams.length > 1 && g.quarters.length > 1 && !g.teams[1].quarters.includes(null)) {
       h += `<div class="tbl-wrap" style="align-self:flex-start;max-width:100%"><table class="qt"><thead><tr><th class="l">팀</th>${g.quarters.map(q => `<th>${q}Q</th>`).join('')}<th>합계</th></tr></thead>
         <tbody>${g.teams.map(t => `<tr><td class="l">${t.win ? '<b class="res-w">' + esc(t.name) + '</b>' : esc(t.name)}</td>${t.quarters.map(v => `<td class="num">${zero(v)}</td>`).join('')}<td class="num"><b>${t.goals}</b></td></tr>`).join('')}</tbody></table></div>`;
     }

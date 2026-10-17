@@ -37,6 +37,22 @@ git add seasons && git commit -m "R33" && git push
 ```
 
 push하고 1~2분 뒤에 사이트가 갱신된다.
+
+### 외부 팀과 경기 (필드)
+
+`opponent:`에 상대 팀 이름을 적고, 쿼터마다 우리 팀 하나만 적은 뒤 `opponent_goals:`에 그 쿼터 상대 득점을 적는다.
+`opponent_goals`가 있어야 클린시트가 맞게 계산되고 사이트에 스코어가 나온다. 예시는 `seasons/25-26/games/20261017_field.yaml`.
+
+```yaml
+opponent: "상대팀이름"
+win_team: "진우"       # 우리 팀 = 그날 감독 이름. 지면 상대팀 이름, 무승부면 null
+quarters:
+  1:
+    진우: {GK: [...], DF: [...], MF: [...], FW: [...]}
+    opponent_goals: 1
+    goals: {박서룡: 1}
+    assists: {}
+```
 PC가 없을 때는 GitHub 웹(모바일 포함)에서 `seasons/25-26/games/`에 파일을 바로 추가하거나 고쳐도 된다.
 
 ## 새 시즌 시작
