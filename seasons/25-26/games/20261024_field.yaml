@@ -1,0 +1,110 @@
+# === 필드 경기 ===
+type: field
+game_id: "25-26 Round 34"
+date: "2026-10-24"
+match_type: "9:9"         # 8:8, 9:9, 11:11
+venue: "송린중학교"
+win_team: "상범"           # 상범팀 5 : 4 진우팀
+
+# 쿼터 중간 교체는 선발만 기록 (1Q 김상범→김지환, 2Q 윤재민→김진섭)
+
+quarters:
+  1:
+    상범:
+      GK: [오권용]
+      DF: [김정민, 김상범, 이웅혁]
+      MF: [윤재민, 김노준, 이동기, 김진섭]
+      FW: [이재일]
+    진우:
+      GK: [재성]
+      DF: [한지훈, 전진우, 민동일]
+      MF: [김재명, 오권호, 최세웅]
+      FW: [이원규, 용혁]
+    goals:
+      이재일: 1
+      윤재민: 1
+    assists:
+      윤재민: 1
+      김진섭: 1
+    referees:
+      - name: 소윤진
+        team: 진우
+        role: main
+      - name: 박서룡
+        team: 진우
+        role: assistant
+
+  2:
+    상범:
+      GK: [이재일]
+      DF: [이창호, 김지환, 김정민]
+      MF: [윤재민, 김노준, 이동기, 오권용]
+      FW: [박찬웅]
+    진우:
+      GK: [재성]
+      DF: [이원규, 용혁, 전진우]
+      MF: [소윤진, 오권호, 한지훈]
+      FW: [김재명, 박서룡]
+    goals:
+      박찬웅: 1
+      박서룡: 1
+    assists:
+      김노준: 1
+      김재명: 1
+    referees:
+      - name: 최세웅
+        team: 진우
+        role: main
+      - name: 민동일
+        team: 진우
+        role: assistant
+
+  3:
+    상범:
+      GK: [김정민]
+      DF: [이창호, 이재일, 이웅혁]
+      MF: [김진섭, 김지환, 이동기, 오권용]
+      FW: [박찬웅]
+    진우:
+      GK: [한지훈]
+      DF: [민동일, 전진우, 재성]
+      MF: [박서룡, 김재명, 오권호, 최세웅]
+      FW: [이원규]
+    goals:
+      박서룡: 1
+    assists:
+      최세웅: 1
+    referees:
+      - name: 소윤진
+        team: 진우
+        role: main
+      - name: 김상범
+        team: 상범
+        role: assistant
+      - name: 김노준
+        team: 상범
+        role: assistant
+
+  4:
+    상범:
+      GK: [재성]
+      DF: [이창호, 박찬웅, 이웅혁]
+      MF: [김정민, 이동기, 김노준, 김진섭]
+      FW: [이재일]
+    진우:
+      GK: [최세웅]
+      DF: [한지훈, 민동일, 용혁]
+      MF: [박서룡, 전진우, 오권호, 소윤진]
+      FW: [이원규]
+    goals:
+      이원규: 2
+      김진섭: 2
+    assists:
+      전진우: 1
+      최세웅: 1
+      이웅혁: 1
+      김노준: 1
+    referees:
+      - name: 김상범
+        team: 상범
+        role: main
