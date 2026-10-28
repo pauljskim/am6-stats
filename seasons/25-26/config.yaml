@@ -15,6 +15,12 @@ weights:
   referee: 2              # 주심 (쿼터당)
   assistant_referee: 1    # 부심 (쿼터당)
 
+# 요약 탭 출석 패널 (true면 표시). 새 시즌은 꺼진 채로 시작하니 기록이 쌓이면 켠다.
+features:
+  absence: true        # 보고 싶은 얼굴: 3경기 이상 연속 결장한 정회원
+  streak: true         # 연속 출석: 최근 경기까지 2경기 이상 연속 출석
+  rank_preview: true   # 다음 경기에 나오면: 평소 경기당 포인트로 계산한 예상 순위 상승
+
 # 수동 보정: 원본 기록과 다르게 집계해야 할 때 (값만큼 더하거나 뺌)
 adjustments:
   - name: 김상범

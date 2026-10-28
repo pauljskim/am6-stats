@@ -397,6 +397,54 @@ def delta(cur_rank, prev_map, name):
     return prev_map[name] - cur_rank
 
 
+def attendance_panels(rows, config, stats, power_board):
+    """요약 탭 출석 패널 (config.yaml의 features로 켜고 끔)"""
+    feats = config.get('features') or {}
+    members = collections.OrderedDict((m['name'], m) for m in config.get('members', []))
+    games = {}
+    for r in rows:
+        games.setdefault(r['gid'], (r['date'], round_no(r['gid']), set()))[2].add(r['player'])
+    order = sorted(games.values(), key=lambda g: g[:2])
+    attended = {n: [n in g[2] for g in order] for n in members}
+    out = {}
+
+    def tail(flags, value):   # 끝에서부터 value가 몇 번 이어지는지
+        k = 0
+        for x in reversed(flags):
+            if x != value:
+                break
+            k += 1
+        return k
+
+    if feats.get('absence'):   # 보고 싶은 얼굴: 3경기 이상 연속 결장한 정회원 (한 번 이상 나온 사람)
+        miss = []
+        for n, m in members.items():
+            a = attended[n]
+            k = tail(a, False)
+            if any(a) and k >= 3 and m.get('status', '정회원') == '정회원':
+                last = max(i for i, x in enumerate(a) if x)
+                miss.append({'name': n, 'games': k, 'last': order[last][0]})
+        out['absence'] = sorted(miss, key=lambda x: (x['games'], x['name']))
+    if feats.get('streak'):    # 연속 출석: 최근 경기까지 2경기 이상 연속
+        out['streak'] = [[rk, n, v] for rk, n, v in
+                         ranked({n: tail(a, True) for n, a in attended.items()})
+                         if v >= 2]
+    if feats.get('rank_preview'):   # 다음 경기에 나오면: 평소 경기당 포인트를 더한 예상 순위
+        pts = {n: v for _, n, v in power_board}
+        rank = {n: rk for rk, n, _ in power_board}
+        proj = []
+        for n, p in pts.items():
+            att = stats.get(n, {}).get('att', 0)
+            if not att:
+                continue
+            gain = round(p / att)
+            new_rank = 1 + sum(1 for o, q in pts.items() if o != n and q > p + gain)
+            if new_rank < rank[n]:
+                proj.append({'name': n, 'rank': rank[n], 'new_rank': new_rank, 'gain': gain})
+        out['rank_preview'] = sorted(proj, key=lambda x: (x['new_rank'] - x['rank'], x['rank']))
+    return out
+
+
 def season_payload(season, config, rows):
     members = collections.OrderedDict((m['name'], m) for m in config.get('members', []))
     stats, total_games = player_stats(rows, config)
@@ -451,6 +499,7 @@ def season_payload(season, config, rows):
         'players': players,
         'venues': venues.most_common(),
         'synergy': synergy(rows, regular),
+        'panels': attendance_panels(rows, config, stats, cur_boards['power']),
         'built_at': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M'),
     }
 
@@ -523,6 +572,9 @@ def cmd_season(args):
         cfg = load_yaml(os.path.join(SEASONS_DIR, prev[-1], 'config.yaml'))
     cfg['season'] = args.name
     cfg['period'] = args.period or ''
+    # 출석 패널은 기록이 쌓인 뒤 켜도록 새 시즌에서는 끈 채로 시작
+    cfg['features'] = {k: False for k in (cfg.get('features') or
+                                          {'absence': 0, 'streak': 0, 'rank_preview': 0})}
     with open(os.path.join(sdir, 'config.yaml'), 'w', encoding='utf-8') as f:
         f.write('# %s 시즌 설정 (%s 시즌에서 복사됨 — 회원 명단·가중치를 확인하세요)\n'
                 % (args.name, prev[-1] if prev else '-'))
