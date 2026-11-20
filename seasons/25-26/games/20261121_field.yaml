@@ -1,0 +1,85 @@
+# === 필드 경기 (외부 팀과 경기) ===
+type: field
+game_id: "25-26 Round 38"
+date: "2026-11-21"
+match_type: "11:11"      # 8:8, 9:9, 11:11
+venue: "풍경운동장"
+opponent: "브이에스"
+win_team: "상범"          # 상범팀 3 : 2 브이에스
+
+quarters:
+  1:
+    상범:
+      GK: [한지훈]
+      DF: [김정민, 김상범, 이재일, 김진섭]
+      MF: [박서룡, 박승민, 이동기, 정성균]
+      FW: [이원규, 박찬웅]
+    opponent_goals: 0
+    goals: {}
+    assists: {}
+    referees:
+      - name: 오권호
+        team: 상범
+        role: main
+      - name: 윤성윤
+        team: 상범
+        role: assistant
+      - name: 이웅혁
+        team: 상범
+        role: assistant
+
+  2:
+    상범:
+      GK: [한지훈]
+      DF: [이웅혁, 오권용, 이재일, 정성균]
+      MF: [김정민, 윤성윤, 오권호, 최세웅]
+      FW: [이원규, 박찬웅]
+    opponent_goals: 0
+    goals: {}
+    assists: {}
+    referees: []
+
+  3:
+    상범:
+      GK: [한지훈]
+      DF: [이웅혁, 오권용, 오권호, 최세웅]
+      MF: [박승민, 윤성윤, 이동기, 김진섭]
+      FW: [김상범, 박서룡]
+    opponent_goals: 1
+    goals:
+      김진섭: 1
+      박서룡: 1
+    assists:
+      이동기: 1
+      김진섭: 1
+    referees:
+      - name: 정성균
+        team: 상범
+        role: main
+      - name: 이재일
+        team: 상범
+        role: assistant
+      - name: 이원규
+        team: 상범
+        role: assistant
+
+  4:
+    상범:
+      GK: [한지훈]
+      DF: [정성균, 이원규, 박찬웅, 김진섭]
+      MF: [김정민, 박승민, 이동기, 박서룡]
+      FW: [김상범, 이재일]
+    opponent_goals: 1
+    goals:
+      이동기: 1
+    assists: {}
+    referees:
+      - name: 오권호
+        team: 상범
+        role: main
+      - name: 오권용
+        team: 상범
+        role: assistant
+      - name: 이웅혁
+        team: 상범
+        role: assistant
