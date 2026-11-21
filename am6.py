@@ -524,9 +524,14 @@ def cmd_build(args):
     if os.path.isdir(OUT_DIR):
         shutil.rmtree(OUT_DIR)
     os.makedirs(OUT_DIR)
+    last = None   # 직전 시즌 회원 요약 (선수 검색의 '지난 시즌' 줄)
     for s in seasons:
         config, rows = load_season(s)
         payload = season_payload(s, config, rows)
+        payload['last_season'] = last
+        last = {'season': s, 'players': {
+            p['name']: [p['rank'], p['points'], p['att']]
+            for p in payload['players'] if p['member'] and p.get('rank') and p.get('att')}}
         os.makedirs(os.path.join(OUT_DIR, s))
         with open(os.path.join(OUT_DIR, s, 'index.html'), 'w', encoding='utf-8') as f:
             f.write(render(payload, seasons, '../'))

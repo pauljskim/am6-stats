@@ -283,6 +283,13 @@ details.others .roster-pick { padding: 0 12px 12px; }
 .pf-name { display: flex; flex-direction: column; min-width: 0; gap: 2px; }
 .pf-name b { font-family: var(--font-display); font-size: 26px; line-height: 1.1; font-weight: 400; }
 .pf-name span { font-size: 13px; color: var(--muted); }
+.last-season {
+  display: inline-block; width: fit-content; margin-top: 6px; padding: 4px 10px; border: 1px solid var(--line);
+  border-radius: 999px; background: var(--sunken); font-size: 12px; color: var(--muted); text-decoration: none;
+}
+.last-season b { color: var(--ink); font-family: var(--font-num); font-size: 14px; }
+.last-season .go { color: var(--pitch); font-weight: 700; }
+.last-season:hover { border-color: var(--pitch); }
 .pf-rank { margin-left: auto; text-align: right; display: flex; flex-direction: column; }
 .pf-rank .num { font-size: 34px; font-weight: 700; line-height: 1; }
 .pf-rank small { font-size: 12px; color: var(--muted); }
@@ -816,6 +823,18 @@ const NAV = /*__NAV__*/null;
   if (!P[selected]) selected = (members.find(p => p.rank === 1) || DATA.players[0] || {}).name;
   let query = '';
 
+  // 직전 시즌 기록 한 줄. 누르면 그 시즌 페이지에서 같은 선수를 연다
+  const LAST = DATA.last_season;
+  function lastSeasonHtml(p) {
+    const v = LAST && LAST.players[p.name];
+    if (!v) return '';
+    return `<a class="last-season" href="${NAV.base}${esc(LAST.season)}/#players" data-last-season="${esc(p.name)}">지난 시즌 <b>${v[0]}위</b> · <b>${v[1]}</b>점 · 출석 <b>${v[2]}</b>경기 <span class="go">›</span></a>`;
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-last-season]');
+    if (a) store.set('player:' + LAST.season, a.dataset.lastSeason);
+  });
+
   function profileHtml(p) {
     if (!p) return '';
     const w = DATA.weights;
@@ -838,7 +857,7 @@ const NAV = /*__NAV__*/null;
     return `<article class="profile">
       <div class="pf-head">
         <div class="kit ${p.member ? '' : 'guestkit'}">${p.member ? esc(p.no || '–') : '게스트'}</div>
-        <div class="pf-name"><b>${esc(p.name)}</b><span>${esc(p.status || '')}${p.member ? ' · 등번호 ' + esc(p.no || '미정') : ''}</span></div>
+        <div class="pf-name"><b>${esc(p.name)}</b><span>${esc(p.status || '')}${p.member ? ' · 등번호 ' + esc(p.no || '미정') : ''}</span>${lastSeasonHtml(p)}</div>
         ${p.member ? `<div class="pf-rank"><span class="num">${p.rank ?? '–'}<small style="font-size:14px"> 위</small></span><small>파워랭킹 · ${p.points || 0}pt ${deltaHtml(p.prev_rank == null ? null : p.prev_rank - p.rank)}</small></div>` : ''}
       </div>
       <div class="pf-stats">
