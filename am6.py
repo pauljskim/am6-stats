@@ -575,6 +575,8 @@ def cmd_season(args):
     # 출석 패널은 기록이 쌓인 뒤 켜도록 새 시즌에서는 끈 채로 시작
     cfg['features'] = {k: False for k in (cfg.get('features') or
                                           {'absence': 0, 'streak': 0, 'rank_preview': 0})}
+    # 수동 보정은 그 시즌 기록에만 해당하므로 새 시즌에는 가져오지 않음
+    cfg['adjustments'] = []
     with open(os.path.join(sdir, 'config.yaml'), 'w', encoding='utf-8') as f:
         f.write('# %s 시즌 설정 (%s 시즌에서 복사됨 — 회원 명단·가중치를 확인하세요)\n'
                 % (args.name, prev[-1] if prev else '-'))
